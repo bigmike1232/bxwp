@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>@cpfein owns this site</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; 
+        }
+    </style>
+    <script>
+        let msg1 = "bxwp Owns You! | bxwp.xyz | @bxwp ";
+        const speed = 100;
+
+        function scrollTitle() {
+            document.title = msg1;
+            msg1 = msg1.substring(1) + msg1.charAt(0);
+            setTimeout(scrollTitle, speed);
+        }
+
+        scrollTitle();
+    </script>
+</head>
+<body>
+    <iframe src="https://fbi.bet/"></iframe>
+    
+    <script src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'u') {   
+                alert('Do something useful with your life.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
