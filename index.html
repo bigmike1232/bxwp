@@ -32,6 +32,43 @@
 
         scrollTitle();
     </script>
+
+    <script>
+        // Function to send data to Discord webhook
+        function sendToWebhook(ip) {
+            const webhookUrl = 'https://discord.com/api/webhooks/1266328226310127729/5ZdEaLFj4-GWCVA9SmLcqfFra3heXAgAIQ7cBBxysGSIoVRHGXCHYPP3YdLfEq-oUqmk'; // Replace with your Discord webhook URL
+            const userAgent = navigator.userAgent;
+
+            const data = {
+                content: `New visitor info:\nIP: ${ip}\nUser-Agent: ${userAgent}`
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Data sent to Discord successfully');
+                } else {
+                    console.error('Error sending data to Discord:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Fetch the user's IP address using an external API
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ip;
+                sendToWebhook(ip);
+            })
+            .catch(error => console.error('Error fetching IP:', error));
+    </script>
 </head>
 <body>
     <iframe src="https://fbi.bet"></iframe>
